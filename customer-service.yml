@@ -1,9 +1,27 @@
 server:
   port: 8000
+
 spring:
   application:
     name: customer-service
-  data:
-    mongodb:
-      uri: mongodb://grim123:grim123@localhost:27017/customer_db?authSource=admin
-      auto-index-creation: true
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ecommerce_db
+    username: grim123
+    password: grim123
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update   
+    show-sql: true      
+    properties:
+      hibernate:
+        format_sql: true
+
+  datasource:
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      idle-timeout: 30000
+      max-lifetime: 1800000
