@@ -15,3 +15,6 @@ spring:
       database: postgresql
     show-sql: true      
 
+grpc:
+  server:
+   port: 9001
